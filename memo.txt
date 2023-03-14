@@ -1,0 +1,25 @@
+
+@ServeletComponent // 서블릿 자동 등록.
+
+* basic/HelloServlet
+extends HttpServlet 상속 받아야함.
+@WebServlet 에 name,urlPatterns 입력.
+ctrl+O 해서 service 인터페이스 선택.
+
+
+application.properties 에
+logging.level.org.apache.coyote.http11=debug
+추가하면 로그볼 수 있음.
+
+* basic/request/RequestHeaderServlet
+요청 헤더정보에 대한거 정리해둠.
+
+# HTTP요청 데이터
+1. GET - 쿼리파라미터
+    메시지바디 없이 URL의 쿼리 파라미터에 데이터를 포함해서 전달
+2. POST - HTML Form
+    content-Type:application/x-wwww-from-urlencoded
+    메시지 바디에 쿼리파라미터 형식으로 전달.
+3. HTTP massage body
+    REST API. JSON,XML,TEXT 담아서 전달.
+    POST,PUT,PATCH
