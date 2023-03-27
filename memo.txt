@@ -17,9 +17,15 @@ logging.level.org.apache.coyote.http11=debug
 # HTTP요청 데이터
 1. GET - 쿼리파라미터
     메시지바디 없이 URL의 쿼리 파라미터에 데이터를 포함해서 전달
+    * RequestParamServlet
 2. POST - HTML Form
     content-Type:application/x-wwww-from-urlencoded
     메시지 바디에 쿼리파라미터 형식으로 전달.
+    * RequestBodyStringServlet
 3. HTTP massage body
     REST API. JSON,XML,TEXT 담아서 전달.
     POST,PUT,PATCH
+
+읽는거 (text,Json)
+ServletInputStream inputStream = request.getInputStream();
+String messageBody = StreamUtils.copyToString(inputStream, StandardCharsets.UTF_8);

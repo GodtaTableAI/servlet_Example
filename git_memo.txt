@@ -1,0 +1,106 @@
+https://www.yalco.kr/@git-github/2-1/
+# git Hub 사용
+1. source tree 설치
+
+** ctrl+~ 누르면 터미널 열림.
+ctrl+sfift+p 누르고 검색에 select default Profile gitbash 디폴트로 설정/
+
+git config --global user.name "(이름)"
+git config --global user.email "(email)"
+git config --global user.name  확인
+git config --global user.email 확인
+
+
+기본 브랜치명 변경.
+
+git config --global init.defaultBranch main
+
+git에서 관리할 폴더 열고
+터미널에  git init  으로 시작. 그러면 폴더에 .git 생김.
+
+git status 누르면 관리할 파일들 나옴.
+
+# git 에게 관리안할 파일 지정.
+.gitignore 파일 생성. 파일안에 숨길 파일 작성.
+# 이렇게 #를 사용해서 주석
+
+@ .gitignore 형식
+----------------------------------------------------------
+# 모든 file.c
+file.c
+# 최상위 폴더의 file.c
+/file.c
+# 모든 .c 확장자 파일
+*.c
+# .c 확장자지만 무시하지 않을 파일
+!not_ignore_this.c
+# logs란 이름의 파일 또는 폴더와 그 내용들
+logs
+# logs란 이름의 폴더와 그 내용들
+logs/
+# logs 폴더 바로 안의 debug.log와 .c 파일들
+logs/debug.log
+logs/*.c
+# logs 폴더 바로 안, 또는 그 안의 다른 폴더(들) 안의 debug.log
+logs/**/debug.log
+----------------------------------------------------------
+
+# 변화를 타임캡슐에 담아 묻기
+모든 파일 담기 : git add . 
+
+# git commit
+VI 입력 모드로 진입됨.
+
+i 입력하고 FIRST COMMIT ESC   :wq
+---------------------------------------------------------------------
+입력 시작	i	명령어 입력 모드에서 텍스트 입력 모드로 전환
+입력 종료	ESC	텍스트 입력 모드에서 명령어 입력 모드로 전환
+저장 없이 종료	:q	
+저장 없이 강제 종료	:q!	입력한 것이 있을 때 사용
+저장하고 종료	:wq	입력한 것이 있을 때 사용
+위로 스크롤	k	git log등에서 내역이 길 때 사용
+아래로 스크롤	j	git log등에서 내역이 길 때 사용
+---------------------------------------------------------------------
+git commit -m "FIRST COMMIT"
+
+
+# git diff
+j 올리기 k 내리기  q 닫기
+
+# git commit 종류.
+git commit -m "Replace Lions with Leopards"
+파일 추가 된건 없을 때 add + commit  : git commit -am "(message)" 
+
+# 과거로 돌아가는 2가지 방법. (Reset vs Revert)
+Reset : 이후 행적을 지워버림.
+Revert : 내역 유지 한 후 .
+
+
+git log 로 돌아가려는 곳 확인 후 commit id 복사
+git reset --hard (commitid)
+
+
+# git branch 
+add-coach 브랜치 생성
+생성 : git branch (add-coach)
+목록확인 : git branch
+브랜치 이동 : git switch (add-coach)
+생성과 동시에 이동 : git switch -c new-teams
+브랜치 삭제하기 : git branch -d (삭제할 브랜치명)
+git branch -D (강제삭제할 브랜치명)
+브랜치 이름 바꾸기 : git branch -m (기존 브랜치명) (새 브랜치명)
+
+
+# branch 합치기 Merge 와 rebase
+Merge는 브랜치의 내역을 남기고 합침.
+Rebase는 몸통 줄기에 붙임.
+
+
+
+
+
+
+
+
+
+
